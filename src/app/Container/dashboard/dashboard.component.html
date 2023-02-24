@@ -1,0 +1,51 @@
+<p>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="toggleSideMenu()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>notifications_none</mat-icon>
+    </button>
+    <button
+      mat-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      Ajay
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      [(opened)]="opened"
+      (opened)="events.push('open!')"
+      (closed)="events.push('close!')"
+    >
+      <mat-action-list>
+        <button mat-list-item>
+          <mat-icon style="margin-right: 15px">security</mat-icon>
+          Company Admin
+        </button>
+        <button mat-list-item>
+          <mat-icon style="margin-right: 15px">domain</mat-icon>
+          Company Management
+        </button>
+      </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content> main content </mat-sidenav-content>
+  </mat-sidenav-container>
+</p>

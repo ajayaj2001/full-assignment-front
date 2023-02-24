@@ -1,0 +1,5 @@
+{
+    "API_URL":"http://localhost:5000/",
+    "POST_LOGIN":"api/auth/login",
+    "POST_REGISTER":"api/auth/register"
+}

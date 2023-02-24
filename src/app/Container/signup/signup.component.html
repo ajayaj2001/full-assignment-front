@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="top"></div>
+  <div class="bottom"></div>
+  <form
+    class="center"
+    [formGroup]="signupForm"
+    ngNativeValidate
+    (submit)="handleSubmit()"
+  >
+    <h2>Sign Up</h2>
+    <div style="font-size: small; color: red; margin-top: 10px">
+      {{ error }}
+    </div>
+    <div *ngIf="m.email.touched && m.email.invalid" class="error">
+      Enter valid email
+    </div>
+    <input type="email" placeholder="email" required formControlName="email" />
+    <div *ngIf="m.password.touched && m.password.invalid" class="error">
+      password must have min 8 character, 1 upper case , 1 special character, 1
+      number
+    </div>
+    <input
+      type="password"
+      placeholder="password"
+      required
+      formControlName="password"
+    />
+    <div
+      *ngIf="
+        m.confirmPassword.touched &&
+        m.confirmPassword.value !== m.password.value
+      "
+      class="error"
+    >
+      password not same as compare password
+    </div>
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      required
+      formControlName="confirmPassword"
+    />
+    <a routerLink="/" style="text-decoration: none">Already had an account ?</a>
+    <button class="button" type="submit">Submit</button>
+  </form>
+</div>
